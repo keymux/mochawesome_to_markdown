@@ -9,7 +9,7 @@
     "mochawesome_to_markdown": "src/mochawesome_to_markdown.bin.js"
   },
   "scripts": {
-    "test:unit": "yarn nyc mocha test/unit"
+    "test:unit": "yarn nyc mocha test/unit --reporter-options reportDir=reports/unit"
   },
   "dependencies": {
     "minimist": "^1.2.0"

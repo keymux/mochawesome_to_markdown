@@ -22,6 +22,7 @@ pipeline {
 
   post {
     always {
+      sh "src/mochawesome_to_markdown.bin.js --mochawesome reports/unit/mochawesome.json"
       sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
     }
   }
