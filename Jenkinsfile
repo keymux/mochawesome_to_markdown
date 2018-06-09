@@ -18,11 +18,11 @@ pipeline {
         )
       }
     }
+  }
 
-    post {
-      always {
-        sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
-      }
+  post {
+    always {
+      sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
     }
   }
 }
