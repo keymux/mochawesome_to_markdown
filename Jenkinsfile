@@ -14,7 +14,7 @@ pipeline {
     stage("test") {
       steps {
         parallel (
-          "test:unit": { sh "/bin/bash -c '. ~/.bash_profile; yarn test:unit'" }
+          "test:unit": { sh "/usr/bin/env bash -c '. ~/.bash_profile; yarn test:unit'" }
         )
       }
     }
@@ -22,7 +22,7 @@ pipeline {
 
   post {
     always {
-      sh "src/mochawesome_to_markdown.bin.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile"
+      sh "/usr/bin/env bash -c '. ~/.bash_profile; node src/mochawesome_to_markdown.bin.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile"
       sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
     }
   }
