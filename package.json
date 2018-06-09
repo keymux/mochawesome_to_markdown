@@ -6,7 +6,7 @@
   "author": "Henry Brown <henry@ibespwn.com>",
   "license": "MIT",
   "bin": {
-    "mochawesome_to_markdown": "src/mochawesome_to_markdown.bin.js"
+    "mochawesome_to_markdown": "bin/mochawesome_to_markdown.js"
   },
   "scripts": {
     "test:unit": "yarn nyc mocha test/unit --reporter-options reportDir=reports/unit"
