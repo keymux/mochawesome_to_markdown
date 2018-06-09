@@ -1,0 +1,8 @@
+/.nyc_output/
+/gen/
+/node_modules/
+/reports/
+
+*.log
+*.swo
+*.swp

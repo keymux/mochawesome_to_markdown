@@ -1,0 +1,3 @@
+--recursive
+--reporter=mochawesome
+--reporter-options reportDir=reports

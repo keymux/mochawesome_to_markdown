@@ -1,0 +1,27 @@
+{
+  "name": "mochawesome_to_markdown",
+  "version": "0.1.0",
+  "description": "Converts mochawesome.json to a markdown file",
+  "main": "src/main.js",
+  "author": "Henry Brown <henry@ibespwn.com>",
+  "license": "MIT",
+  "bin": {
+    "mochawesome_to_markdown": "src/mochawesome_to_markdown.bin.js"
+  },
+  "scripts": {
+    "test:unit": "yarn nyc mocha test/unit"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "@keymux/promisrfs": "^0.1.1",
+    "ajv": "^6.5.0",
+    "ajv-pack": "^0.3.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.2",
+    "nyc": "^12.0.2",
+    "sinon": "^5.1.1"
+  }
+}

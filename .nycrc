@@ -1,0 +1,9 @@
+{
+  "check-coverage": true,
+  "report-dir": "./reports/coverage",
+  "reporter": [
+    "text",
+    "json",
+    "json-summary"
+  ]
+}
