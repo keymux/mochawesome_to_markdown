@@ -32,9 +32,11 @@ pipeline {
 
   post {
     always {
-      sh "/usr/bin/env bash -c '. ~/.bash_profile; node bin/mochawesome_to_markdown.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile'"
-      sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
-      sh "/usr/bin/env bash -c 'node https://api.github.com/repos/${ghprbGhRepository}/issues/${ghprbPullId}/comments'"
+      dockerNode("docker") {
+        sh "/usr/bin/env bash -c '. ~/.bash_profile; node bin/mochawesome_to_markdown.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile'"
+        sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
+        sh "/usr/bin/env bash -c 'node https://api.github.com/repos/${ghprbGhRepository}/issues/${ghprbPullId}/comments'"
+      }
     }
   }
 }
