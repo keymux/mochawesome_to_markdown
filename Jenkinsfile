@@ -1,6 +1,11 @@
 pipeline {
   agent any
 
+  environment {
+    GITHUB_ACCESS_TOKEN = credentials("jenkins-hibes_github_access_token")
+  }
+
+
   stages {
     stage("build") {
       steps {
