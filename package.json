@@ -1,23 +1,27 @@
 {
-  "name": "mochawesome_to_markdown",
+  "name": "@keymux/mochawesome_to_markdown",
   "version": "0.1.0",
   "description": "Converts mochawesome.json to a markdown file",
   "main": "src/main.js",
   "author": "Henry Brown <henry@ibespwn.com>",
   "license": "MIT",
   "bin": {
-    "mochawesome_to_markdown": "src/mochawesome_to_markdown.bin.js"
+    "mochawesome_to_markdown": "bin/mochawesome_to_markdown.js"
   },
   "scripts": {
-    "test:unit": "yarn nyc mocha test/unit"
+    "reports:clean": "rm -rf reports/*",
+    "reports:unit": "node bin/mochawesome_to_markdown.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile",
+    "reports:summary": "cat reports/*.githubCommentFile > reports/githubCommentFile",
+    "submit:github": "BODY_FILE=reports/githubCommentFile github_cli createAnIssueComment",
+    "test:unit": "yarn nyc mocha test/unit --reporter-options reportDir=reports/unit"
   },
   "dependencies": {
+    "@keymux/github_cli": "^0.1.7",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
     "@keymux/promisrfs": "^0.1.1",
     "ajv": "^6.5.0",
-    "ajv-pack": "^0.3.1",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "mochawesome": "^3.0.2",

@@ -1,6 +1,6 @@
 {
   "check-coverage": true,
-  "report-dir": "./reports/coverage",
+  "report-dir": "./reports/unit/coverage",
   "reporter": [
     "text",
     "json",

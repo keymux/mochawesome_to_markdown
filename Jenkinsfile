@@ -1,12 +1,17 @@
 pipeline {
   agent any
 
+  environment {
+    GITHUB_ACCESS_TOKEN = credentials("jenkins-hibes_github_access_token")
+  }
+
+
   stages {
     stage("build") {
       steps {
         parallel (
-          "clean": { sh "/usr/bin/env bash -c '. ~/.bash_profile; yarn install'" },
-          "env": { sh "/usr/bin/env bash -c 'env'" }
+          "clean": { sh "yarn reports:clean" },
+          "install": { sh "yarn install" }
         )
       }
     }
@@ -14,15 +19,17 @@ pipeline {
     stage("test") {
       steps {
         parallel (
-          "test:unit": { sh "/bin/bash -c '. ~/.bash_profile; yarn test:unit'" }
+          "test:unit": { sh "yarn test:unit" }
         )
       }
     }
+  }
 
-    post {
-      always {
-        sh "cat reports/*.githubCommentFile > reports/githubCommentFile"
-      }
+  post {
+    always {
+      sh "yarn reports:unit"
+      sh "yarn reports:summary"
+      sh "yarn submit:github"
     }
   }
 }
