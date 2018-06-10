@@ -16,7 +16,7 @@
     "test:unit": "yarn nyc mocha test/unit --reporter-options reportDir=reports/unit"
   },
   "dependencies": {
-    "@keymux/github_cli": "^0.1.5",
+    "@keymux/github_cli": "^0.1.6",
     "minimist": "^1.2.0"
   },
   "devDependencies": {

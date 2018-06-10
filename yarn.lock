@@ -82,9 +82,9 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@keymux/github_cli@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@keymux/github_cli/-/github_cli-0.1.5.tgz#d7e5bb2f5c7fc7d6662b1d04e0f1995904feacba"
+"@keymux/github_cli@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@keymux/github_cli/-/github_cli-0.1.6.tgz#975963572a9d345e83166770b1edb97305c55691"
   dependencies:
     "@keymux/promisrfs" "^0.1.1"
     minimist "^1.2.0"
