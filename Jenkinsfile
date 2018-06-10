@@ -24,7 +24,7 @@ pipeline {
     always {
       sh "yarn reports:unit"
       sh "yarn reports:summary"
-      sh "yarn reports:github"
+      sh "yarn submit:github"
     }
   }
 }
