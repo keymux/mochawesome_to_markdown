@@ -9,8 +9,9 @@
     "mochawesome_to_markdown": "bin/mochawesome_to_markdown.js"
   },
   "scripts": {
-    "report:unit": "node bin/mochawesome_to_markdown.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile",
-    "report:summary": "cat reports/*.githubCommentFile > reports/githubCommentFile",
+    "reports:clean": "rm -rf reports/*",
+    "reports:unit": "node bin/mochawesome_to_markdown.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile",
+    "reports:summary": "cat reports/*.githubCommentFile > reports/githubCommentFile",
     "test:unit": "yarn nyc mocha test/unit --reporter-options reportDir=reports/unit"
   },
   "dependencies": {
