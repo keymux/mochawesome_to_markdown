@@ -22,7 +22,7 @@ pipeline {
 
   post {
     always {
-      sh "reports:unit",
+      sh "reports:unit"
       sh "reports:summary"
     }
   }
