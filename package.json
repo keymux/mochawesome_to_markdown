@@ -12,9 +12,11 @@
     "reports:clean": "rm -rf reports/*",
     "reports:unit": "node bin/mochawesome_to_markdown.js --mochawesome reports/unit/mochawesome.json > reports/unit.githubCommentFile",
     "reports:summary": "cat reports/*.githubCommentFile > reports/githubCommentFile",
+    "submit:github": "BODY=reports/githubCommentFile github_cli",
     "test:unit": "yarn nyc mocha test/unit --reporter-options reportDir=reports/unit"
   },
   "dependencies": {
+    "@keymux/github_cli": "^0.1.1",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
