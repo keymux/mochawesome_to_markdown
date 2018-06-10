@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image "keymux/docker-ubuntu-nvm-yarn"
-      args "-v ${PWD}:/work -w /work -e NODE_VERSION=v6.10.2"
+      args "-e NODE_VERSION=v6.10.2"
     }
   }
 
