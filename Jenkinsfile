@@ -22,8 +22,8 @@ pipeline {
 
   post {
     always {
-      sh "reports:unit"
-      sh "reports:summary"
+      sh "yarn reports:unit"
+      sh "yarn reports:summary"
     }
   }
 }
